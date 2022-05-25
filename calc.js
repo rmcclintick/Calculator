@@ -2,6 +2,7 @@
 let num1;
 let num2;
 let operator;
+let line2isResult = false;
 
 //line2 screen
 const line1 = document.querySelector('.line-1');
@@ -20,6 +21,11 @@ clearBtn.addEventListener('click', () => {
 const numberBtns = document.querySelectorAll('.number');
 numberBtns.forEach(button => {
     button.addEventListener('click', () => {
+        if (line2isResult)
+        {
+            clearAll();
+            line2isResult = false;
+        }
         line2.textContent = line2.textContent + button.textContent;
     })
 });
@@ -76,7 +82,8 @@ function evaluate()
         }
         clearAll();
         //num1 = result;
-        line2.textContent = result.toFixed(7);
+        line2.textContent = Math.round(result * 10000) / 10000;
+        line2isResult = true;
 
     }
 
