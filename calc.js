@@ -98,6 +98,7 @@ function operate(op)
     {
         if (!num1) //set num1
         {
+            line2isResult = false;
             num1 = Number(line2.textContent);
             operator = op;
             line1.textContent = num1;
