@@ -17,7 +17,7 @@ body {
     align-items: center;
     width: fit-content;
     border: 5px solid var(--black);
-    border-radius: 6px;
+    border-radius: 8px;
     padding: 3px;
     background-color:var(--platinum);
 }
@@ -42,26 +42,32 @@ body {
 button {
     width: 48px;
     font-size: 24px;
-    background-color: var(--platinum);
+    background-color: var(--oxford-blue);
+    color: var(--platinum);
     border-radius: 8px;
     margin: 2px;
+    
 }
 
 .logo {
     text-align: left;
     font-family:sans-serif;
     margin-right: 2px;
+    border: 2px solid var(--orange-web);
+    border-radius: 8px;
 }
 
 .box {
+    box-sizing: border-box;
     background-color: var(--black);
     color: var(--orange-web);
     height: 48px;
     width: 100%;
     margin: auto;
-    border: -3px solid var(--black);
+    border: 3px solid var(--platinum);
     border-radius: 8px;
+    padding: 0px 8px 0px 8px;
     text-align: right;
-    line-height: 48px;
+    line-height: 48px; 
     vertical-align: middle;
 }
