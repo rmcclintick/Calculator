@@ -9,6 +9,8 @@
 body {
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .calc-container {
@@ -46,8 +48,7 @@ button {
     background-color: var(--oxford-blue);
     color: var(--platinum);
     border-radius: 8px;
-    margin: 2px;
-    
+    margin: 2px; 
 }
 
 .logo {
@@ -75,19 +76,8 @@ button {
     vertical-align: middle;
     
 }
-/* .box {
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    background-color: var(--black);
-    font-size: 22;
-    color: var(--orange-web);
-    width: 100%;
-    margin: auto;
-    border: 3px solid var(--platinum);
-    border-radius: 8px;
-    padding: 0px 8px 0px 8px;
-    text-align: right;
-    line-height: 48px; 
-    vertical-align: middle;
-} */
+
+
+.error-info {
+    
+}

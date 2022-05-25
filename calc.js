@@ -7,6 +7,9 @@ let operator;
 const line1 = document.querySelector('.line-1');
 const line2 = document.querySelector('.line-2');
 
+//info div
+const info = document.querySelector('.error-info');
+
 //clear button
 const clearBtn = document.querySelector('#clear-btn');
 clearBtn.addEventListener('click', () => {
@@ -55,7 +58,14 @@ function evaluate()
         num2 = Number(line2.textContent);
         switch (operator) 
         {
-            case '/': result = num1 / num2;
+            case '/': 
+                if (num2 == 0)
+                {
+                    info.textContent = 'Please no divide by zero';
+                    clearAll();
+                }
+                else 
+                    result = num1 / num2;
                 break;
             case 'x': result = num1 * num2;
                 break;
