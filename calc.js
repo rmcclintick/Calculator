@@ -40,7 +40,9 @@ operatorBtns.forEach(button => {
 
 //equal button
 const equalBtn = document.querySelector('.equal-btn');
-equalBtn.addEventListener('click', evaluate);
+equalBtn.addEventListener('click', () => {
+    evaluate(false);
+});
 
 //clears screen and entry history
 function clearAll()
@@ -54,38 +56,48 @@ function clearAll()
 }
 
 //evaluate entry
-function evaluate()
+function evaluate(isChained)
 {
     let result;
-    //broken
     if (!num1 && !num2){}
     else if (!num2)
     {
         num2 = Number(line2.textContent);
-        switch (operator) 
-        {
-            case '/': //must check for divide by zero
-                if (num2 == 0)
-                {
-                    info.textContent = 'Please no divide by zero';
-                    clearAll();
-                }
-                else 
-                    result = num1 / num2;
-                break;
-            case 'x': result = num1 * num2;
-                break;
-            case '-': result = num1 - num2;
-                break;
-            case '+': result = num1 + num2;
-                break;
-        }
-        clearAll();
-        //num1 = result;
+    }
+   
+    switch (operator) 
+    {
+        case '/': //must check for divide by zero
+            if (num2 == 0)
+            {
+                info.textContent = 'Please no divide by zero';
+                clearAll();
+            }
+            else 
+                result = num1 / num2;
+            break;
+        case 'x': result = num1 * num2;
+            break;
+        case '-': result = num1 - num2;
+            break;
+        case '+': result = num1 + num2;
+            break;
+    }
+    clearAll();
+    //num1 = result;
+    if (!isChained)
+    {
         line2.textContent = Math.round(result * 10000) / 10000;
         line2isResult = true;
-
     }
+    else
+    {
+        line1.textContent = Math.round(result * 10000) / 10000;
+        num1 = Number(line1.textContent);
+        num2 = null;
+    }
+        
+    
 
 }
 
@@ -103,6 +115,14 @@ function operate(op)
             operator = op;
             line1.textContent = num1;
             line2.textContent = '';
+        }
+        else
+        {
+            num1 = Number(line1.textContent);
+            num2 = Number(line2.textContent);
+            
+            evaluate(true);
+            operator = op;
         }
     }
 
