@@ -61,9 +61,27 @@ button {
 .box {
     box-sizing: border-box;
     background-color: var(--black);
+    color: var(--orange-web);
+    width: 100%;
+    text-align: right;
+    border: 3px solid var(--platinum);
+    border-radius: 8px;
+    padding: 0px 16px 0px 8px;
+}
+
+.line {
+    height: 20px;
+    line-height: 20px;
+    vertical-align: middle;
+    
+}
+/* .box {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--black);
     font-size: 22;
     color: var(--orange-web);
-    height: 48px;
     width: 100%;
     margin: auto;
     border: 3px solid var(--platinum);
@@ -72,4 +90,4 @@ button {
     text-align: right;
     line-height: 48px; 
     vertical-align: middle;
-}
+} */
