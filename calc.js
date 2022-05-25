@@ -58,7 +58,7 @@ function evaluate()
         num2 = Number(line2.textContent);
         switch (operator) 
         {
-            case '/': 
+            case '/': //must check for divide by zero
                 if (num2 == 0)
                 {
                     info.textContent = 'Please no divide by zero';
@@ -75,9 +75,8 @@ function evaluate()
                 break;
         }
         clearAll();
-        console.log('result:', result);
         //num1 = result;
-        line2.textContent = result;
+        line2.textContent = result.toFixed(7);
 
     }
 
@@ -85,7 +84,6 @@ function evaluate()
 
 function operate(op)
 {
-    console.log(op);
     //if no number entered, do nothing
     if (!line2.textContent)
         {}
@@ -98,10 +96,6 @@ function operate(op)
             line1.textContent = num1;
             line2.textContent = '';
         }
-        // else if(num1) //if chaining operations
-        // {
-        //     num2 = Number(line2.textContent);
-        // } 
     }
-    //alert(`num1:${num1} num2:${num2} op:${operator}`);
+
 }

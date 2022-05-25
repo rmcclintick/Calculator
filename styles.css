@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+
 :root {
 --black: #000000;
 --oxford-blue: #14213d;
@@ -11,6 +13,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    font-family: Bungee;
 }
 
 .calc-container {
@@ -45,17 +48,25 @@ body {
 button {
     width: 48px;
     font-size: 24px;
+    font-family: Bungee;
     background-color: var(--oxford-blue);
     color: var(--platinum);
     border-radius: 8px;
     margin: 2px; 
 }
 
+.operator,
+#clear-btn,
+.decimal-point,
+.equal-btn {
+    color: var(--orange-web);
+}
+
 .logo {
     text-align: left;
-    font-family:sans-serif;
-    margin-right: 2px;
-    border: 2px solid var(--orange-web);
+    margin: auto;
+    border: 2px solid var(--black);
+    padding: 5px;
     border-radius: 8px;
 }
 
@@ -74,10 +85,5 @@ button {
     height: 20px;
     line-height: 20px;
     vertical-align: middle;
-    
-}
-
-
-.error-info {
     
 }
