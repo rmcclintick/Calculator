@@ -61,6 +61,7 @@ button {
 .box {
     box-sizing: border-box;
     background-color: var(--black);
+    font-size: 22;
     color: var(--orange-web);
     height: 48px;
     width: 100%;
